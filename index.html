@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>919 IT Solutions LLC — North Carolina IT Services</title>
+  <meta name="description" content="Managed IT Services for small and medium businesses in the Triangle region of North Carolina. Serving Raleigh, Durham, Cary, Apex, Chapel Hill and surrounding areas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0b1929;
+      --ink:    #1a2b3c;
+      --blue:   #1a6fc4;
+      --sky:    #3b9edd;
+      --accent: #e8f4fd;
+      --slate:  #4a6278;
+      --mid:    #8da5b8;
+      --light:  #f4f8fc;
+      --white:  #ffffff;
+      --radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+      background: rgba(11,25,41,0.97);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-img {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+    .logo-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -1px;
+    }
+    .logo-tag {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--sky);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 6px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--sky) !important; color: var(--white) !important; }
+
+    .nav-phone {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--sky);
+      text-decoration: none;
+      margin-left: 1rem;
+    }
+
+    /* hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      padding: 120px 5% 80px;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero-tagline { margin-left: auto; margin-right: auto; }
+    .hero-actions { justify-content: center; }
+
+    .hero-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--sky);
+    }
+
+    .hero-tagline {
+      font-size: 1.15rem;
+      color: var(--mid);
+      margin-bottom: 2.2rem;
+      max-width: 460px;
+      line-height: 1.7;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius);
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.03em;
+    }
+    .btn-primary:hover { background: var(--sky); transform: translateY(-1px); }
+
+    .btn-ghost {
+      display: inline-block;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--sky); background: rgba(59,158,221,0.08); }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 380px;
+    }
+    .hero-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: 1.5rem;
+    }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .pill {
+      background: rgba(59,158,221,0.12);
+      color: #a8d4f0;
+      font-size: 0.82rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 100px;
+      border: 1px solid rgba(59,158,221,0.2);
+    }
+
+    .service-area {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .service-area strong {
+      display: block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: 0.4rem;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 5%; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 1.2rem;
+    }
+    .section-body {
+      font-size: 1.05rem;
+      color: var(--slate);
+      max-width: 680px;
+      line-height: 1.8;
+    }
+
+    /* ── MISSION ── */
+    #mission { background: var(--light); }
+    .mission-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .mission-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .stat-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.8rem 1.5rem;
+      border: 1px solid rgba(26,111,196,0.1);
+    }
+    .stat-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--blue);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--slate);
+      line-height: 1.4;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--white); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .service-card {
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 2rem 1.8rem;
+      border: 1px solid transparent;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .service-card:hover {
+      border-color: rgba(26,111,196,0.2);
+      box-shadow: 0 8px 32px rgba(26,111,196,0.08);
+      transform: translateY(-3px);
+    }
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+    }
+    .service-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--slate);
+      line-height: 1.7;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--navy); color: var(--white); }
+    #about .section-title { color: var(--white); }
+    #about .section-label { color: var(--sky); }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .owner-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      position: sticky;
+      top: 100px;
+    }
+    .owner-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--sky));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+    }
+    .owner-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+    .owner-title {
+      font-size: 0.82rem;
+      color: var(--sky);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 1.5rem;
+    }
+    .owner-bio {
+      font-size: 0.9rem;
+      color: #8da5b8;
+      line-height: 1.75;
+    }
+
+    .about-content .section-body { color: #8da5b8; }
+
+    .why-list { list-style: none; margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.2rem; }
+    .why-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .why-check {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      border-radius: 50%;
+      background: rgba(59,158,221,0.15);
+      border: 1px solid rgba(59,158,221,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      font-size: 0.7rem;
+      color: var(--sky);
+    }
+    .why-list li span {
+      font-size: 0.95rem;
+      color: #8da5b8;
+      line-height: 1.6;
+    }
+    .why-list li strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--light); }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .contact-info { display: flex; flex-direction: row; gap: 3rem; margin-top: 2.5rem; flex-wrap: wrap; }
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+    .contact-item a {
+      font-size: 1rem;
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-item a:hover { text-decoration: underline; }
+    .contact-item p { font-size: 0.85rem; color: var(--slate); margin-top: 0.1rem; }
+
+    .contact-form {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 2.5rem;
+      border: 1px solid rgba(26,111,196,0.1);
+      box-shadow: 0 4px 24px rgba(26,111,196,0.05);
+    }
+    .form-row { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.2rem; }
+    .form-row label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--slate);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .form-row input,
+    .form-row textarea,
+    .form-row select {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #dde8f2;
+      border-radius: 8px;
+      color: var(--ink);
+      background: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-row input:focus,
+    .form-row textarea:focus,
+    .form-row select:focus { border-color: var(--blue); }
+    .form-row textarea { min-height: 110px; resize: vertical; }
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.9rem 2rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 0.5rem;
+    }
+    .btn-submit:hover { background: var(--sky); transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: var(--mid);
+      padding: 3rem 5%;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .footer-copy { font-size: 0.85rem; }
+    .footer-area {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      max-width: 560px;
+      text-align: center;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-grid, .mission-layout, .about-layout, .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .hero-visual { display: none; }
+      .owner-card { position: static; }
+      .form-row-2 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .mission-stats { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 68px; left: 0; right: 0;
+        background: var(--navy);
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-area { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#home">
+    <!-- Logo image from your WordPress site. For GitHub Pages, save header.png in your repo and change the src to "./header.png" -->
+    <img class="logo-img"
+         src="https://www.919solutions.com/wp-content/uploads/2017/03/header.png"
+         alt="919 IT Solutions"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <span style="display:none; align-items:baseline; gap:10px;">
+      <span class="logo-num">919</span>
+      <span class="logo-tag">IT Solutions</span>
+    </span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <a class="nav-phone" href="tel:9193919449">919-391-9449</a>
+  <div class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-grid">
+    <div class="hero">
+      <p class="hero-eyebrow">North Carolina Managed IT Services</p>
+      <h1>Honest.<br><em>Experienced.</em><br>Local.</h1>
+      <p class="hero-tagline">Supporting small and medium businesses across the Triangle with resilient, straightforward, and cost-effective IT solutions.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Free IT Assessment</a>
+        <a href="#services" class="btn-ghost">Our Services</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MISSION -->
+<section id="mission">
+  <div class="section-inner">
+    <div class="mission-layout">
+      <div>
+        <p class="section-label">Our Mission</p>
+        <h2 class="section-title">IT Support That Works Like an Extension of Your Team</h2>
+        <p class="section-body">At 919 IT Solutions, our mission is to provide small business owners the opportunity to focus solely on their own business goals — not their technological needs. We differentiate ourselves by partnering closely with our clients, allowing us to take a more intricate role in the day-to-day operations of your business.</p>
+        <p class="section-body" style="margin-top:1rem;">We're not your typical IT support vendor — we're an extension of your internal staff. A small, local team with a lot of experience means personal attention and dedicated resources that larger IT providers simply can't match.</p>
+      </div>
+      <div class="mission-stats">
+        <div class="stat-card">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Years of enterprise IT experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Local Triangle-focused service</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Infrastructure monitoring coverage</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">SMB</div>
+          <div class="stat-label">Specialized in small &amp; mid-size business</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <p class="section-label">What We Do</p>
+    <h2 class="section-title">Services Built for Your Business</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">💾</div>
+        <h3>Disaster Recovery</h3>
+        <p>Our backup and recovery tools ensure that your company's electronic data is kept safe and resilient against outages and data loss events.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔒</div>
+        <h3>Security</h3>
+        <p>Security is a priority. We work closely with clients to prevent security incidents that can affect business continuity and expose sensitive data.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Maintenance &amp; Support</h3>
+        <p>OS and software patching keeps all your systems current. We're just a phone call away when an issue arises — no phone trees, no wait times.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📡</div>
+        <h3>24/7 Monitoring</h3>
+        <p>Round-the-clock monitoring of your servers, workstations, and infrastructure. We detect and address problems before they wreak havoc on operations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">☁️</div>
+        <h3>Cloud Services</h3>
+        <p>DaaS, hosted email, Microsoft 365, spam filtering, cloud storage, and cloud backup/restore — tailored to your needs and budget.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💡</div>
+        <h3>Consulting</h3>
+        <p>Requirements outside of a standard managed service plan? We'll develop a custom solution that fits your unique environment and goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-layout">
+      <div>
+        <div class="owner-card">
+          <div class="owner-avatar">TR</div>
+          <div class="owner-name">Tim Riley</div>
+          <div class="owner-title">Founder &amp; Owner</div>
+          <p class="owner-bio">BS in Computer Information Systems from Union College. Over 20 years of enterprise IT experience in the defense, software, and financial services sectors — specializing in System Administration and DevOps Engineering.</p>
+        </div>
+      </div>
+      <div class="about-content">
+        <p class="section-label">About Us</p>
+        <h2 class="section-title">Why Choose 919 IT Solutions?</h2>
+        <p class="section-body">At 919, the goal is to provide thorough, sensible IT solutions that result in real cost savings and increased productivity for your business.</p>
+        <ul class="why-list">
+          <li>
+            <span class="why-check">✓</span>
+            <span><strong>Personalized service.</strong> No call centers, no phone trees. You get a knowledgeable human being every time you reach out.</span>
+          </li>
+          <li>
+            <span class="why-check">✓</span>
+            <span><strong>Deep experience.</strong> 20+ years across System Administration, DevOps, and Infrastructure Engineering means your systems and data are in good hands.</span>
+          </li>
+          <li>
+            <span class="why-check">✓</span>
+            <span><strong>Truly local.</strong> We serve only the Triangle region of North Carolina, so we can give every client the focused attention they deserve.</span>
+          </li>
+          <li>
+            <span class="why-check">✓</span>
+            <span><strong>Honest approach.</strong> We cut through the noise and deliver practical, cost-effective solutions — not upsells.</span>
+          </li>
+          <li>
+            <span class="why-check">✓</span>
+            <span><strong>Triangle coverage.</strong> Raleigh, Durham, Chapel Hill, Cary, Apex, Holly Springs, Fuquay Varina, Garner, Wake Forest, Pittsboro, and surrounding areas.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Let's Talk About Your IT Needs</h2>
+    <p class="section-body">Reach out for a free, no-obligation IT assessment. We'll take a look at your current setup and tell you exactly what we'd recommend.</p>
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <a href="tel:9193919449">919-391-9449</a>
+          <p>Mon–Fri, business hours</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <a href="mailto:info@919solutions.com">info@919solutions.com</a>
+          <p>We respond within one business day</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <a href="#">Triangle Region, NC</a>
+          <p>Serving Raleigh, Cary, Durham &amp; surrounding areas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2026 919 IT Solutions LLC</div>
+    <div class="footer-area">Proudly serving Raleigh, Durham, Chapel Hill, Cary, Apex, Morrisville, Holly Springs, Fuquay Varina, Garner, Wake Forest, Pittsboro, and surrounding areas of the Triangle.</div>
+  </div>
+</footer>
+
+</body>
+</html>
