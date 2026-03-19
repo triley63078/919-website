@@ -53,8 +53,8 @@
     /* ── NAV ── */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
+      top: 40px; left: 0; right: 0;
+      z-index: 102;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -138,7 +138,7 @@
       background: var(--navy);
       position: relative;
       overflow: hidden;
-      padding: 120px 5% 80px;
+      padding: 160px 5% 80px;
     }
 
     .hero-grid {
@@ -601,6 +601,11 @@
 </head>
 <body>
 
+<!-- ANNOUNCEMENT BANNER -->
+<div style="position:fixed;top:0;left:0;right:0;z-index:101;background:var(--blue);color:#fff;text-align:center;padding:10px 20px;font-size:0.9rem;font-weight:500;">
+  ✨ New: Introducing <strong>Lighthouse</strong> — always-on WiFi monitoring for short-term rental hosts. <a href="https://lighthouse.919solutions.com" target="_blank" style="color:#fff;text-decoration:underline;margin-left:6px;">Learn more &rarr;</a>
+</div>
+
 <!-- NAV -->
 <nav>
   <a class="logo" href="#home">
@@ -618,6 +623,7 @@
     <li><a href="#mission">Mission</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#lighthouse">Lighthouse</a></li>
     <li><a href="#contact" class="nav-cta">Contact Us</a></li>
   </ul>
   <a class="nav-phone" href="tel:9193919449">919-391-9449</a>
@@ -754,6 +760,22 @@
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- LIGHTHOUSE SPOTLIGHT -->
+<section id="lighthouse" style="background:var(--navy);padding:80px 5%;">
+  <div class="section-inner" style="max-width:900px;margin:0 auto;text-align:center;">
+    <p class="section-label" style="color:var(--sky);">New From 919 IT Solutions</p>
+    <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:#fff;margin:0.4em 0 0.6em;line-height:1.2;">Introducing Lighthouse</h2>
+    <p style="font-size:1.1rem;color:#8da5b8;max-width:640px;margin:0 auto 2rem;line-height:1.7;">Always-on network monitoring built for short-term rental hosts. Lighthouse watches your WiFi 24/7, automatically heals outages before guests notice, and gives you a live status page to share with prospective guests.</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:2.5rem;">
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 20px;color:#c8dce9;font-size:0.9rem;">24/7 monitoring</div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 20px;color:#c8dce9;font-size:0.9rem;">Automatic self-healing</div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 20px;color:#c8dce9;font-size:0.9rem;">Cellular backup connection</div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 20px;color:#c8dce9;font-size:0.9rem;">Guest-facing WiFi status page</div>
+    </div>
+    <a href="https://lighthouse.919solutions.com" target="_blank" style="display:inline-block;background:var(--blue);color:#fff;font-weight:600;font-size:1rem;padding:14px 32px;border-radius:8px;text-decoration:none;">Learn More &rarr;</a>
   </div>
 </section>
 
